@@ -1,0 +1,26 @@
+.livro-card {
+    border-radius: 2px;
+
+    .card-section {
+        .livro-thumbnail {
+            img {
+                width: 100%;
+                height: 280px;
+            }
+        }
+
+        .livro-title {
+            height: 3em;
+            overflow: hidden;
+        }
+
+        .livro-genero {
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .livro-button {
+            text-align: center;
+        }
+    }
+}

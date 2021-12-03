@@ -1,0 +1,29 @@
+.gform_wrapper {
+
+	.gform_heading {
+		h3.gform_title {}
+		.gform_description {}
+	}
+
+	.gform_body {
+		.gform_fields {
+			.gfield  {
+				h2.gsection_title {}
+
+				.gsection_description {}
+		
+				.gfield_label {
+					.gfield_required {}
+				}
+				.medium {}
+				.large {}
+				.textarea {}
+				.gfield_description {}
+			}
+		}
+	}
+
+	.gform_footer {
+		.button {}
+	}
+}

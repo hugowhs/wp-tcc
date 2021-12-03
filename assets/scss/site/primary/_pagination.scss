@@ -1,0 +1,12 @@
+.pagination {
+
+	a {
+		display: inline-block;
+
+		.page-numbers {
+			&.current {}
+		}
+		.prev {}
+		.next {}
+	}
+}

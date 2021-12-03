@@ -1,0 +1,234 @@
+.sticky {
+	display: block;
+}
+
+.sticky-post {
+	background: $button-background;
+	color: $button-color;
+	display: inline-block;
+	font-weight: bold;
+	line-height: 1;
+	padding: .25rem;
+	position: absolute;
+	text-transform: uppercase;
+	top: -$global-position;
+	z-index: 1;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 calc(1.5 * #{$global-margin});
+}
+
+.entry {
+
+	margin-top: calc(6 * #{$global-margin});
+
+	&:first-of-type {
+		margin-top: 0;
+	}
+
+	&__header {
+		position: relative;
+	}
+
+	&__title {
+		margin: 0;
+
+		a {
+			color: inherit;
+
+			&:hover {
+				color: $anchor-color-hover;
+			}
+		}
+	}
+
+	&__meta,
+	&__footer {
+		color: $body-text-light;
+		font-weight: 500;
+
+		> span {
+			display: inline-block;
+			margin-right: $global-margin;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		a {
+			@include link-transition;
+			color: currentColor;
+
+			&:hover {
+				color: $anchor-color;
+				text-decoration: none;
+			}
+		}
+
+		.material-icons {
+			display: inline-block;
+			margin-right: .5em;
+			position: relative;
+			vertical-align: middle;
+		}
+	}
+
+	&__meta {
+		margin: $global-margin 0;
+	}
+
+	&__footer {
+		margin: calc(2 * #{$global-margin}) $global-margin $global-margin;
+	}
+
+	.post-thumbnail {
+		margin: $global-margin 0;
+
+		&:focus {
+			outline: none;
+		}
+
+		.post-thumbnail-inner {
+			display: block;
+
+			img {
+				display: block;
+				position: relative;
+				width: 100%;
+			}
+		}
+	}
+
+	.image-filters-enabled & {
+
+		.post-thumbnail {
+			display: block;
+			position: relative;
+
+			.post-thumbnail-inner {
+				filter: grayscale(100%);
+
+				&::after {
+					background: rgba(0, 0, 0, .35);
+					content: '';
+					display: block;
+					height: 100%;
+					opacity: .5;
+					pointer-events: none;
+					position: absolute;
+					top: 0;
+					width: 100%;
+					z-index: 4;
+
+					@supports (mix-blend-mode: multiply) {
+						display: none;
+					}
+				}
+			}
+
+			&::before,
+			&::after, {
+				content: '\020';
+				display: block;
+				height: 100%;
+				left: 0;
+				pointer-events: none;
+				position: absolute;
+				top: 0;
+				width: 100%;
+			}
+
+			@include filter-duotone;
+		}
+	}
+
+	&__content,
+	&__summary {
+		max-width: calc(100% - (2 * #{ $global-position }));
+		margin: $global-margin 0;
+	}
+
+	&__content {
+
+		p {
+			word-wrap: break-word;
+		}
+
+		.more-link {
+			@include link-transition;
+			color: inherit;
+			display: inline;
+
+			&::after {
+				content: '\02192';
+				display: inline-block;
+				margin-left: .5em;
+			}
+
+			&:hover {
+				color: $anchor-color;
+				text-decoration: none;
+			}
+		}
+
+		a {
+			text-decoration: underline;
+
+			&.button,
+			&:hover {
+				text-decoration: none;
+			}
+
+			&.button {
+				display: inline-block;
+			}
+
+			&.button:hover {
+				background: $button-background;
+				color: $button-color;
+				cursor: pointer;
+			}
+		}
+
+		// Overwrite iframe embeds that have inline styles.
+		> iframe[style] {
+
+			margin: 32px 0 !important;
+			max-width: 100% !important;
+
+			@include breakpoint(medium) {
+				max-width: $site-tablet-content !important;
+			}
+
+			@include breakpoint(large) {
+				max-width: $site-desktop-content !important;
+			}
+		}
+
+		// Page links
+		.page-links a {
+			margin: calc(0.5 * #{$global-margin});
+			text-decoration: none;
+		}
+
+		// Classic editor audio embeds.
+		.wp-audio-shortcode {
+			max-width: calc(100vw - (2 * #{ $global-position }));
+
+			@include breakpoint(medium) {
+				max-width: $site-tablet-content;
+			}
+
+			@include breakpoint(large) {
+				max-width: $site-desktop-content;
+			}
+		}
+	}
+}

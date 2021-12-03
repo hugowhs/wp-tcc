@@ -1,0 +1,24 @@
+// Import
+@import 'mixins';
+
+@mixin link-transition($attr: color) {
+	transition: $attr $link-transition ease-in-out;
+}
+
+@mixin button-transition() {
+	transition: background $button-transition ease-in-out;
+}
+
+@mixin button-all-transition() {
+	transition: all $button-transition ease-in-out;
+}
+
+@mixin background-transition() {
+	transition: background $background-transition ease-in-out;
+}
+
+@mixin selection {
+	::selection {
+		@content;
+	}
+}

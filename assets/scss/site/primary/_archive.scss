@@ -1,0 +1,54 @@
+.archive .page__header,
+.search .page__header,
+.error404 .page__header {
+
+	.page__title {
+		color: $header-color;
+		display: inline;
+		letter-spacing: normal;
+
+		&::before {
+			display: none;
+		}
+	}
+
+	.search-term,
+	.page__description {
+		clear: both;
+		display: inherit;
+
+		&::after {
+			color: $subheader-color;
+			content: '.';
+			font-weight: bold;
+		}
+	}
+}
+
+.archive .page__header .page__description {
+	color: $body-font-color;
+	display: block;
+	font-size: 1em;
+}
+
+.hfeed .entry .entry-header {}
+
+/* 404 & Not found */
+
+.error-404.not-found,
+.no-results.not-found {
+
+	.page__title,
+	.page__content {
+		margin: calc(3 * #{$global-margin}) #{$global-margin};
+	}
+
+	.search-submit {
+		margin: $global-margin 0;
+		vertical-align: middle;
+	}
+
+	.search-field {
+		width: 100%;
+	}
+}

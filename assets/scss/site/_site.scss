@@ -1,0 +1,25 @@
+.site {
+	width: 100%;
+}
+
+
+
+.site__content {
+	@include xy-grid-container;
+}
+
+
+
+// Import
+@import 'site-header';
+@import 'site-footer';
+
+// Primary
+@import 'primary/archive';
+@import 'primary/entry';
+@import 'primary/pagination';
+@import 'primary/front-page';
+
+// Secondary
+@import 'secondary/widgets';
+

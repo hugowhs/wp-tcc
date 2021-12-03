@@ -1,0 +1,16 @@
+@import 'variables/foundation';
+
+// Sizes
+$site-tablet-content: calc(8 * (100vw / 12) - 28px);
+$site-desktop-content: calc(6 * (100vw / 12) - 28px);
+
+
+// Text
+$body-text-light: $subheader-color;
+
+
+// Transition timeouts.
+$link-transition: 110ms;
+$icon-transition: 120ms;
+$button-transition: 150ms;
+$background-transition: 200ms;

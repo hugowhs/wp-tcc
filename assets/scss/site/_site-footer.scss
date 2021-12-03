@@ -1,0 +1,42 @@
+.site__footer {
+	padding: 2em 0 .5em;
+}
+
+
+.footer__inner {
+	@include xy-grid-container;
+}
+
+
+.footer__copyright {
+	font-size: $small-font-size;
+	position: relative;
+	width: 100%;
+
+	p {
+		margin-right: 40px;
+	}
+
+	a {
+		background: url('../img/img-w-footer.png') 0 -140px no-repeat;
+		display: block;
+		height: 19px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 32px;
+
+		&:hover {
+			background-position: 0 -120px;
+		}
+
+		@media (-webkit-min-device-pixel-ratio: 2),	(min-resolution: 192dpi) {
+			background: url('../img/img-w-footer-2x.png') 0 -140px no-repeat;
+			background-size: 32px 320px;
+
+			&:hover {
+				background-position: 0 -120px;
+			}
+		}
+	}
+}
